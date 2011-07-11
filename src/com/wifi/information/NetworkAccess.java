@@ -28,7 +28,7 @@ public class NetworkAccess {
 			try{
 				HttpClient client = new DefaultHttpClient();
 				HttpGet request = new HttpGet();
-				request.setURI(new URI("http://72.14.204.99")); // google.com
+				request.setURI(new URI("http://72.14.204.99"));
 				HttpResponse response = client.execute(request);
 				in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 				
@@ -38,6 +38,7 @@ public class NetworkAccess {
 				
 				while((line = in.readLine()) != null){
 					String temp = line + NL;
+					//Log.d(TAG, "Receiving: " + temp);
 					sb.append(temp);
 				}
 				
